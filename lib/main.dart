@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'home.dart';
+import 'book.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,7 +41,7 @@ class HomePage extends StatelessWidget {
             case 0:
               return Home();
             case 1:
-              return SafeArea(child: Text("Tab two"));
+              return Book();
             case 2:
               return SafeArea(child: Text("Tab three"));
           }
