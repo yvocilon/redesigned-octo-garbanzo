@@ -18,12 +18,12 @@ class Post {
   }
 }
 
-Future<Post> fetchPost() async {
-  final response =
-      await http.get('https://jsonplaceholder.typicode.com/posts/1');
+Future<List<Post>> fetchPosts() async {
+  final response = await http.get('https://jsonplaceholder.typicode.com/posts');
 
   if (response.statusCode == 200) {
-    return Post.fromJson(json.decode(response.body));
+    Iterable postsJson = json.decode(response.body);
+    return postsJson.map((model) => Post.fromJson(model)).toList();
   } else {
     throw Exception("Failed to load posts");
   }

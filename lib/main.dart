@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 
 import 'home.dart';
-import 'book.dart';
+import 'posts/posts.dart';
 
 void main() => runApp(MyApp());
 
@@ -9,10 +9,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return CupertinoApp(
-      title: 'Flutter Demo',
-      home: HomePage(),
-    );
+    return CupertinoApp(title: 'Beautiful', home: HomePage());
   }
 }
 
@@ -41,7 +38,7 @@ class HomePage extends StatelessWidget {
             case 0:
               return Home();
             case 1:
-              return Book();
+              return Posts();
             case 2:
               return SafeArea(child: Text("Tab three"));
           }
